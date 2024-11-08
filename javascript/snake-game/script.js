@@ -5,6 +5,7 @@ const snake = {
     size: 1, // size of the snake
     rowIndex: 1, // horizontal index of the grid
     columnIndex: 1, // vertical index of the grid
+    score: 0, // score of the game
 }
 
 // Get the snake from the local storage
@@ -37,6 +38,14 @@ const renderSnake = () => {
     snakeHead.style.gridRowEnd = snake.rowIndex + 1;
     snakeHead.style.gridColumnStart = snake.columnIndex;
     snakeHead.style.gridColumnEnd = snake.columnIndex + 1;
+
+    if (snake.rowIndex === JSON.parse(localStorage.getItem('food')).rowIndex && snake.columnIndex === JSON.parse(localStorage.getItem('food')).columnIndex) {
+        snake.size++;
+        snake.score++;
+        setSnake(snake);
+        randomizeFoodPosition();
+        renderFood();
+    }
 }
 
 // Normalize snake position
