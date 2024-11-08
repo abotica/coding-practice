@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+#game-container {
+    display: grid;
+    grid-template-columns: repeat(32, 1fr);
+    grid-template-rows: repeat(32, 1fr);
+    width: 600px;
+    height: 600px;
+    border: 1px solid darkgray;
+    background-color: #ffffff;
+}
+
+.snake-box {
+    width: 90%;
+    height: 90%;
+    grid-column: 1/1;
+    grid-row: 1/1;
+    background-color: green;
+    border: 1px solid black;
+    justify-self: center;
+    align-self: center;
+}
+
+#head img{
+    width: 100%;
+    height: auto;
+}
+
+#head {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* #food {
+    display: flex;
+    justify-self: center;
+    align-self: center;
+}
+
+#food img{
+    width: 100%;
+    height: auto;
+    grid-column: 1/1;
+    grid-row: 1/1;
+} */
