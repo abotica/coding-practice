@@ -25,8 +25,6 @@ body {
 .snake-box {
     width: 90%;
     height: 90%;
-    grid-column: 1/1;
-    grid-row: 1/1;
     background-color: green;
     border: 1px solid black;
     justify-self: center;
@@ -44,7 +42,7 @@ body {
     align-items: center;
 }
 
-/* #food {
+#food {
     display: flex;
     justify-self: center;
     align-self: center;
@@ -53,6 +51,4 @@ body {
 #food img{
     width: 100%;
     height: auto;
-    grid-column: 1/1;
-    grid-row: 1/1;
-} */
+}

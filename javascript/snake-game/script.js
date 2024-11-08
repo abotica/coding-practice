@@ -80,26 +80,29 @@ const listenToKeyDown = () => {
     });
 }
 
-// // Spawn the food
-// const spawnFood = () => {
-//     const food = {
-//         rowIndex: Math.floor(Math.random() * 32) + 1,
-//         columnIndex: Math.floor(Math.random() * 32) + 1,
-//     }
-//     localStorage.setItem('food', JSON.stringify(food));
-// }
+// Randomize food position
+const randomizeFoodPosition = () => {
+    const foodObj = {
+        rowIndex: Math.floor(Math.random() * 32) + 1,
+        columnIndex: Math.floor(Math.random() * 32) + 1,
+    }
+    localStorage.setItem('food', JSON.stringify(foodObj));
+}
 
-// // Render the food
-// const renderFood = () => {
-//     const food = JSON.parse(localStorage.getItem('food'));
-//     food.style.gridRowStart = food.rowIndex;
-//     food.style.gridRowEnd = food.rowIndex + 1;
-//     food.style.gridColumnStart = food.columnIndex;
-//     food.style.gridColumnEnd = food.columnIndex + 1;
-// }
+// Render the food
+const renderFood = () => {
+    const foodObj = JSON.parse(localStorage.getItem('food'));
+    console.log(food);
+    food.style.gridRowStart = foodObj.rowIndex;
+    food.style.gridRowEnd = foodObj.rowIndex + 1;
+    food.style.gridColumnStart = foodObj.columnIndex;
+    food.style.gridColumnEnd = foodObj.columnIndex + 1;
+}
 
 // Initialize the game
 const init = () => {
+    randomizeFoodPosition();
+    renderFood();
     initLocalStorage();
     renderSnake();
     listenToKeyDown();
