@@ -92,7 +92,6 @@ const randomizeFoodPosition = () => {
 // Render the food
 const renderFood = () => {
     const foodObj = JSON.parse(localStorage.getItem('food'));
-    console.log(food);
     food.style.gridRowStart = foodObj.rowIndex;
     food.style.gridRowEnd = foodObj.rowIndex + 1;
     food.style.gridColumnStart = foodObj.columnIndex;
